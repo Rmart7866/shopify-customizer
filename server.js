@@ -14,7 +14,7 @@ app.use(bodyParser.raw({ type: 'application/json' }));
 app.use(express.static('public'));
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/shopify-custom-apparel', {
+mongoose.connect(process.env.MONGO_URL || process.env.MONGODB_URI || 'mongodb://localhost/shopify-custom-apparel', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
